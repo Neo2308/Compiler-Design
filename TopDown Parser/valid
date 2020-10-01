@@ -1,0 +1,47 @@
+(a*a)+a*(a+a)
+Current        	Action Taken        	Matched        	Remaining      
+A              	Applied A -> CB     	               	(a*a)+a*(a+a)$ 
+C              	Applied C -> ED     	               	(a*a)+a*(a+a)$ 
+E              	Applied E -> (A)    	               	(a*a)+a*(a+a)$ 
+(              	Match (             	(              	a*a)+a*(a+a)$  
+A              	Applied A -> CB     	(              	a*a)+a*(a+a)$  
+C              	Applied C -> ED     	(              	a*a)+a*(a+a)$  
+E              	Applied E -> a      	(              	a*a)+a*(a+a)$  
+a              	Match a             	(a             	*a)+a*(a+a)$   
+D              	Applied D -> *ED    	(a             	*a)+a*(a+a)$   
+*              	Match *             	(a*            	a)+a*(a+a)$    
+E              	Applied E -> a      	(a*            	a)+a*(a+a)$    
+a              	Match a             	(a*a           	)+a*(a+a)$     
+D              	Applied D -> eps    	(a*a           	)+a*(a+a)$     
+B              	Applied B -> eps    	(a*a           	)+a*(a+a)$     
+)              	Match )             	(a*a)          	+a*(a+a)$      
+D              	Applied D -> eps    	(a*a)          	+a*(a+a)$      
+B              	Applied B -> +CB    	(a*a)          	+a*(a+a)$      
++              	Match +             	(a*a)+         	a*(a+a)$       
+C              	Applied C -> ED     	(a*a)+         	a*(a+a)$       
+E              	Applied E -> a      	(a*a)+         	a*(a+a)$       
+a              	Match a             	(a*a)+a        	*(a+a)$        
+D              	Applied D -> *ED    	(a*a)+a        	*(a+a)$        
+*              	Match *             	(a*a)+a*       	(a+a)$         
+E              	Applied E -> (A)    	(a*a)+a*       	(a+a)$         
+(              	Match (             	(a*a)+a*(      	a+a)$          
+A              	Applied A -> CB     	(a*a)+a*(      	a+a)$          
+C              	Applied C -> ED     	(a*a)+a*(      	a+a)$          
+E              	Applied E -> a      	(a*a)+a*(      	a+a)$          
+a              	Match a             	(a*a)+a*(a     	+a)$           
+D              	Applied D -> eps    	(a*a)+a*(a     	+a)$           
+B              	Applied B -> +CB    	(a*a)+a*(a     	+a)$           
++              	Match +             	(a*a)+a*(a+    	a)$            
+C              	Applied C -> ED     	(a*a)+a*(a+    	a)$            
+E              	Applied E -> a      	(a*a)+a*(a+    	a)$            
+a              	Match a             	(a*a)+a*(a+a   	)$             
+D              	Applied D -> eps    	(a*a)+a*(a+a   	)$             
+B              	Applied B -> eps    	(a*a)+a*(a+a   	)$             
+)              	Match )             	(a*a)+a*(a+a)  	$              
+D              	Applied D -> eps    	(a*a)+a*(a+a)  	$              
+B              	Applied B -> eps    	(a*a)+a*(a+a)  	$              
+$              	Match $             	(a*a)+a*(a+a)$ 	               
+
+Result:
+INPUT WAS A MATCH
+

@@ -1,0 +1,23 @@
+(a*a+)
+Current        	Action Taken        	Matched        	Remaining      
+A              	Applied A -> CB     	               	(a*a+)$        
+C              	Applied C -> ED     	               	(a*a+)$        
+E              	Applied E -> (A)    	               	(a*a+)$        
+(              	Match (             	(              	a*a+)$         
+A              	Applied A -> CB     	(              	a*a+)$         
+C              	Applied C -> ED     	(              	a*a+)$         
+E              	Applied E -> a      	(              	a*a+)$         
+a              	Match a             	(a             	*a+)$          
+D              	Applied D -> *ED    	(a             	*a+)$          
+*              	Match *             	(a*            	a+)$           
+E              	Applied E -> a      	(a*            	a+)$           
+a              	Match a             	(a*a           	+)$            
+D              	Applied D -> eps    	(a*a           	+)$            
+B              	Applied B -> +CB    	(a*a           	+)$            
++              	Match +             	(a*a+          	)$             
+Parsing Table Error
+Cannot transition from C for )
+
+Result:
+INPUT WAS NOT A MATCH
+
