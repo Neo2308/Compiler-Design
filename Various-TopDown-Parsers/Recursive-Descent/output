@@ -1,0 +1,221 @@
+Script started on 2020-10-10 14:44:55+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="238" LINES="39"]
+GRAMMAR IN USE :
+E -> TE'
+E' -> +TE' | epsilon
+T -> FT'
+T' -> *FT' | epsilon
+F -> (E) | id
+
+TOKENS :
+['id', '*', '(', 'id', '+', 'id', ')', '+', 'id']
+
+
+Looking for E in : "id * ( id + id ) + id"
+--------------------
+Trying E -> TE'
+	Looking for T in : "id * ( id + id ) + id"
+	--------------------
+	Trying T -> FT'
+		Looking for F in : "id * ( id + id ) + id"
+		--------------------
+		Trying F -> (E)
+		ERROR: Incorrect terminal (needed '(' got 'id')
+		F -> (E) failed.
+		--------------------
+		--------------------
+		Trying F -> id
+		MATCHED 'id' WITH id
+		Applied F -> id
+		--------------------
+		MATCHED "id" WITH F
+
+		Looking for T' in : "* ( id + id ) + id"
+		--------------------
+		Trying T' -> *FT'
+		MATCHED '*' WITH *
+			Looking for F in : "( id + id ) + id"
+			--------------------
+			Trying F -> (E)
+			MATCHED '(' WITH (
+				Looking for E in : "id + id ) + id"
+				--------------------
+				Trying E -> TE'
+					Looking for T in : "id + id ) + id"
+					--------------------
+					Trying T -> FT'
+						Looking for F in : "id + id ) + id"
+						--------------------
+						Trying F -> (E)
+						ERROR: Incorrect terminal (needed '(' got 'id')
+						F -> (E) failed.
+						--------------------
+						--------------------
+						Trying F -> id
+						MATCHED 'id' WITH id
+						Applied F -> id
+						--------------------
+						MATCHED "id" WITH F
+
+						Looking for T' in : "+ id ) + id"
+						--------------------
+						Trying T' -> *FT'
+						ERROR: Incorrect terminal (needed '*' got '+')
+						T' -> *FT' failed.
+						--------------------
+						--------------------
+						Trying T' -> epsilon
+						MATCHED '' WITH epsilon
+						Applied T' -> epsilon
+						--------------------
+						MATCHED "" WITH T'
+
+					Applied T -> FT'
+					--------------------
+					MATCHED "id" WITH T
+
+					Looking for E' in : "+ id ) + id"
+					--------------------
+					Trying E' -> +TE'
+					MATCHED '+' WITH +
+						Looking for T in : "id ) + id"
+						--------------------
+						Trying T -> FT'
+							Looking for F in : "id ) + id"
+							--------------------
+							Trying F -> (E)
+							ERROR: Incorrect terminal (needed '(' got 'id')
+							F -> (E) failed.
+							--------------------
+							--------------------
+							Trying F -> id
+							MATCHED 'id' WITH id
+							Applied F -> id
+							--------------------
+							MATCHED "id" WITH F
+
+							Looking for T' in : ") + id"
+							--------------------
+							Trying T' -> *FT'
+							ERROR: Incorrect terminal (needed '*' got ')')
+							T' -> *FT' failed.
+							--------------------
+							--------------------
+							Trying T' -> epsilon
+							MATCHED '' WITH epsilon
+							Applied T' -> epsilon
+							--------------------
+							MATCHED "" WITH T'
+
+						Applied T -> FT'
+						--------------------
+						MATCHED "id" WITH T
+
+						Looking for E' in : ") + id"
+						--------------------
+						Trying E' -> +TE'
+						ERROR: Incorrect terminal (needed '+' got ')')
+						E' -> +TE' failed.
+						--------------------
+						--------------------
+						Trying E' -> epsilon
+						MATCHED '' WITH epsilon
+						Applied E' -> epsilon
+						--------------------
+						MATCHED "" WITH E'
+
+					Applied E' -> +TE'
+					--------------------
+					MATCHED "+ id" WITH E'
+
+				Applied E -> TE'
+				--------------------
+				MATCHED "id + id" WITH E
+
+			MATCHED ')' WITH )
+			Applied F -> (E)
+			--------------------
+			MATCHED "( id + id )" WITH F
+
+			Looking for T' in : "+ id"
+			--------------------
+			Trying T' -> *FT'
+			ERROR: Incorrect terminal (needed '*' got '+')
+			T' -> *FT' failed.
+			--------------------
+			--------------------
+			Trying T' -> epsilon
+			MATCHED '' WITH epsilon
+			Applied T' -> epsilon
+			--------------------
+			MATCHED "" WITH T'
+
+		Applied T' -> *FT'
+		--------------------
+		MATCHED "* ( id + id )" WITH T'
+
+	Applied T -> FT'
+	--------------------
+	MATCHED "id * ( id + id )" WITH T
+
+	Looking for E' in : "+ id"
+	--------------------
+	Trying E' -> +TE'
+	MATCHED '+' WITH +
+		Looking for T in : "id"
+		--------------------
+		Trying T -> FT'
+			Looking for F in : "id"
+			--------------------
+			Trying F -> (E)
+			ERROR: Incorrect terminal (needed '(' got 'id')
+			F -> (E) failed.
+			--------------------
+			--------------------
+			Trying F -> id
+			MATCHED 'id' WITH id
+			Applied F -> id
+			--------------------
+			MATCHED "id" WITH F
+
+			Looking for T' in : ""
+			--------------------
+			Trying T' -> *FT'
+			ERROR: Incorrect terminal (Needed '*' got EOF)
+			T' -> *FT' failed.
+			--------------------
+			--------------------
+			Trying T' -> epsilon
+			MATCHED '' WITH epsilon
+			Applied T' -> epsilon
+			--------------------
+			MATCHED "" WITH T'
+
+		Applied T -> FT'
+		--------------------
+		MATCHED "id" WITH T
+
+		Looking for E' in : ""
+		--------------------
+		Trying E' -> +TE'
+		ERROR: Incorrect terminal (Needed '+' got EOF)
+		E' -> +TE' failed.
+		--------------------
+		--------------------
+		Trying E' -> epsilon
+		MATCHED '' WITH epsilon
+		Applied E' -> epsilon
+		--------------------
+		MATCHED "" WITH E'
+
+	Applied E' -> +TE'
+	--------------------
+	MATCHED "+ id" WITH E'
+
+Applied E -> TE'
+--------------------
+MATCHED "id * ( id + id ) + id" WITH E
+
+RESULT:
+INPUT WAS A MATCH
+
+Script done on 2020-10-10 14:44:55+05:30 [COMMAND_EXIT_CODE="0"]
