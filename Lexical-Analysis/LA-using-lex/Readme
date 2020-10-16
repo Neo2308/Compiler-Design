@@ -1,0 +1,8 @@
+Command to run: 
+lex lexer.l; gcc main.c -o lexer; ./lexer
+
+Details:
+'main.c' contains the driver code which runs the lexer.
+'lexer.l' contains the rules for identifying tokens which on compilation generates 'lex.yy.c'.
+'lex.yy.c' contains auto-generated code for lexical analysis. 
+'input.c' is the source code that is processed by the lexer.
