@@ -4,11 +4,11 @@ Setup:
 	
 	lex token.l
 	
-	gcc lex.yy.c translate.tab.c
+	gcc lex.yy.c translate.tab.c -o parser
 
 Usage:
 	
-	./a.out
+	./parser
 
 
 
