@@ -7,16 +7,19 @@ Setup:
 	gcc lex.yy.c translate.tab.c
 
 Usage:
+	
 	./a.out
+
+
 
 Made By:
 
-P. Radha Krishna
+	P. Radha Krishna
 
-17075040
+	17075040
 
-Part - IV
+	Part - IV
 
-CSE (B.Tech) 
+	CSE (B.Tech) 
 
-IIT (BHU) Varanasi
+	IIT (BHU) Varanasi
