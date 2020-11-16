@@ -1,9 +1,7 @@
 Setup:
 
 	bison -d translate.y
-	
 	lex token.l
-	
 	gcc lex.yy.c translate.tab.c -o parser
 
 Usage:
